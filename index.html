@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clique sur le bouton</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        button {
+            padding: 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        #message-container {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            font-size: 50px;
+            color: #333;
+        }
+
+        #close-button {
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="cacherBouton()">Cliquez-moi !</button>
+
+    <div id="message-container">
+        <div id="message">Thomas t'aimes ️</div>
+        <span id="close-button" onclick="fermerMessage()">❤</span>
+    </div>
+
+    <script>
+        function cacherBouton() {
+            var bouton = document.querySelector('button');
+            bouton.style.display = 'none';
+
+            var messageContainer = document.getElementById('message-container');
+            messageContainer.style.display = 'flex';
+        }
+
+        function fermerMessage() {
+            var bouton = document.querySelector('button');
+            bouton.style.display = 'block';
+
+            var messageContainer = document.getElementById('message-container');
+            messageContainer.style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
